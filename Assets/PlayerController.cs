@@ -14,7 +14,7 @@ public class ThirdPersonController : MonoBehaviour
     
     // Jump parameters
     [Header("Jump Settings")]
-    [SerializeField] private float jumpHeight = 1f;
+    [SerializeField] public float jumpHeight = 1f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float fallMultiplier = 2.5f;
     
@@ -42,10 +42,6 @@ public class ThirdPersonController : MonoBehaviour
     {
         // Check if character is grounded
         groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
-        {
-            playerVelocity.y = -0.5f; // Small downward force to ensure grounding
-        }
         
         // Get input for movement
         float horizontal = Input.GetAxisRaw("Horizontal");
