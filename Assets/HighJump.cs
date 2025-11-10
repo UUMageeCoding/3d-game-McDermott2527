@@ -10,12 +10,17 @@ public class HighJump : MonoBehaviour
 
     }
     [SerializeField] PlayerPrefs PlayerController;
-   
-    void Update()
-    {
-      void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Collision Detected");
-    }  
-    }
+  private void OnCollisionEnter(Collision collision)
+  {
+    Debug.Log("Collision Detected");
+  }
+
+    private void OnCollisionExit(Collision collision)
+  {
+    Debug.Log("Collision Stopped");
+  }  
+  void Update()
+  { 
+    
+ }
 }
