@@ -2,19 +2,13 @@ using UnityEngine;
 
 public class ObstacleMovement : MonoBehaviour
 {
-    [SerializeField] float distanceToCoverX;
-    [SerializeField] float speed;
+    public Vector3 pointA = new Vector3(29, 11, 17);
+    public Vector3 pointB = new Vector3(41, 11, 23);
+    public float speed = 1.0f;
 
-    private Vector3 startingPosition;
-
-    void Start()
+    void Update()
     {
-        startingPosition = transform.position;
+        float time = Mathf.PingPong(Time.time * speed, 1);
+        transform.position = Vector3.Lerp(pointA, pointB, time);
     }
-        void Update()
-    {
-        Vector3 v = startingPosition;
-        v.x += distanceToCoverX * Mathf.Sin(Time.time * speed);
-        transform.position = v;
-    }
-    }
+}
