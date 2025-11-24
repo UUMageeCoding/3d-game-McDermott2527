@@ -8,7 +8,7 @@ public class WinZone : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) // Activates on a collision
     {
         Debug.Log("You Win!");
     }
