@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ThirdPersonController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     // Character controller component
     private CharacterController controller;
@@ -37,13 +37,13 @@ public class ThirdPersonController : MonoBehaviour
         // Lock and hide cursor for camera control
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        groundedPlayer = true;
     }
     
     private void Update()
     {
         // Check if character is grounded
-        groundedPlayer = controller.isGrounded;
-        
+        groundedPlayer = controller.isGrounded;      
         // Get input for movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
